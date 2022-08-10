@@ -1,0 +1,11 @@
+{
+  "name": "puf-api",
+  "version": "0.0.0",
+  "main": "index.js",
+  "author": {
+    "name": "Luan Melo",
+    "email": "luanmelolima@gmail.com"
+  },
+  "license": "MIT",
+  "private": true
+}
