@@ -1,6 +1,3 @@
-const x = (a) =>
+const x = a => a + 10
 
-
-
-a + 10
-
+x(1)
