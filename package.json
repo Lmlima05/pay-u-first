@@ -14,7 +14,6 @@
     "fix:format": "prettier --write",
     "format": "yarn fix:format 'src/**/*.(js|ts|md|json)",
     "lint": "yarn fix:lint src/**/*.{js,ts,md,json}",
-
     "prebuild": "rm -Rf ./dist",
     "build": "babel src --extensions \".js\" --ignore \"*.spec.js,*.test.js\" --out-dir dist --out-dir dist --copy-files",
     "dev": "nodemon --exec babel-node src/index.js"
@@ -38,7 +37,7 @@
     "@commitlint/cli": "^17.0.3",
     "@commitlint/config-conventional": "^17.0.3",
     "babel-plugin-module-resolver": "^4.1.0",
-    "eslint": "^8.21.0",
+    "eslint": "^8.22.0",
     "eslint-config-prettier": "^8.5.0",
     "eslint-plugin-json": "^3.1.0",
     "eslint-plugin-prettier": "^4.2.1",
