@@ -7,7 +7,6 @@ export const list = async (ctx) => {
   } catch (error) {
     ctx.status = 500
     ctx.body = 'Ops! Algo deu erradom tente novamente.'
-    return
   }
 }
 
@@ -48,7 +47,7 @@ export const remove = async (ctx) => {
 
     ctx.body = { id: ctx.params.id }
   } catch (err) {
-      ctx.status = 500
-      ctx.body = 'Ops! Algo deu errado, tente novamente.'
+    ctx.status = 500
+    ctx.body = 'Ops! Algo deu errado, tente novamente.'
   }
 }
