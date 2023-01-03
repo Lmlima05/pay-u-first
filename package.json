@@ -8,7 +8,8 @@
   },
   "license": "MIT",
   "private": true,
-  "scripts": {
+  "scripts": { 
+    "db:migrate": "yarn prisma migrate dev --preview-feature",
     "fix": "run-s \"fix:* {@}\" --",
     "fix:lint": "eslint --fix --no-error-on-unmatched-pattern",
     "fix:format": "prettier --write",
@@ -37,6 +38,7 @@
     "@babel/preset-env": "^7.18.10",
     "@commitlint/cli": "^17.0.3",
     "@commitlint/config-conventional": "^17.0.3",
+    "@types/dotenv-safe": "^8.1.2",
     "babel-plugin-module-resolver": "^4.1.0",
     "eslint": "^8.22.0",
     "eslint-config-prettier": "^8.5.0",

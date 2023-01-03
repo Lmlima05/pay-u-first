@@ -42,7 +42,7 @@ export const login = async ctx => {
   }
 }
 
-export const list = async (ctx) => {
+export const list = async ctx => {
   try {
     const users = await prisma.user.findMany()
     ctx.body = users
@@ -52,7 +52,7 @@ export const list = async (ctx) => {
   }
 }
 
-export const create = async (ctx) => {
+export const create = async ctx => {
   try {
     const saltRounds = 10
 
@@ -77,7 +77,7 @@ export const create = async (ctx) => {
   }
 }
 
-export const update = async (ctx) => {
+export const update = async ctx => {
   const { name, email } = ctx.request.body
 
   try {
@@ -93,7 +93,7 @@ export const update = async (ctx) => {
   }
 }
 
-export const remove = async (ctx) => {
+export const remove = async ctx => {
   try {
     await prisma.user.delete({
       where: { id: ctx.params.id },
