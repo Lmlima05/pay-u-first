@@ -1,9 +1,8 @@
 import jwt from 'jsonwebtoken'
 import bcrypt from 'bcrypt'
 
-import { prisma } from '~/data'
+import * as model from './model'
 import { decodeBasicToken } from './services'
-import './model'
 
 export const login = async ctx => {
   try {
@@ -11,7 +10,7 @@ export const login = async ctx => {
       ctx.request.headers.authorization
     )
 
-    const user = await prisma.user.findUnique({
+    const user = await model.findUnique({
       where: { email, password },
     })
 
@@ -38,18 +37,18 @@ export const login = async ctx => {
     }
 
     ctx.status = 500
-    ctx.body = 'Ops! Algo deu erradom tente novamente.'
+    ctx.body = 'Ops! Algo deu errado, tente novamente.'
     return
   }
 }
 
 export const list = async ctx => {
   try {
-    const users = await prisma.user.findMany()
+    const users = await model.findMany()
     ctx.body = users
   } catch (error) {
     ctx.status = 500
-    ctx.body = 'Ops! Algo deu erradom tente novamente.'
+    ctx.body = 'Ops! Algo deu errado, tente novamente.'
     return
   }
 }
@@ -63,7 +62,7 @@ export const create = async ctx => {
       saltRounds
     )
 
-    const user = await prisma.user.create({
+    const user = await model.create({
       data: {
         name: ctx.request.body.name,
         email: ctx.request.body.email,
@@ -83,7 +82,7 @@ export const update = async ctx => {
   const { name, email } = ctx.request.body
 
   try {
-    const user = await prisma.user.update({
+    const user = await model.update({
       where: { id: ctx.params.id },
       data: { name, email },
     })
@@ -97,7 +96,7 @@ export const update = async ctx => {
 
 export const remove = async ctx => {
   try {
-    await prisma.user.delete({
+    await model.delete({
       where: { id: ctx.params.id },
     })
 
