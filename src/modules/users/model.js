@@ -1,7 +1,7 @@
 import bcrypt from 'bcrypt'
 import { omit } from 'ramda'
 
-imporgit t { prisma } from '~/data'
+import { prisma } from '~/data'
 
 const passwordCheck = async (params, next) => {
   const { password: passwordPlainText, ...where } = params.args.where
