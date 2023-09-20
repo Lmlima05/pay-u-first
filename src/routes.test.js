@@ -53,7 +53,6 @@ describe('User routes', () => {
     //execution
     const result = await request(server).get('/login').auth(email, password)
     const decodedToken = jwt.verify(result.body.token, process.env.JWT_SECRET)
-
     //expectation
     expect(result.status).toBe(200)
     expect(result.body.user).toBeTruthy()
