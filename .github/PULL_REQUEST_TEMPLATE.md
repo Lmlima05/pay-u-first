@@ -10,6 +10,9 @@
 
 # Checklist
 
-[] Testando Manualmente
-[] Testes Passando
-[] Homologado
+- [] Testando Manualmente
+- [] Testes Passando
+- [] Homologado
+
+#Dúvidas
+git
