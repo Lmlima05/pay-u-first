@@ -1,8 +1,8 @@
 import jwt from 'jsonwebtoken'
 import bcrypt from 'bcrypt'
 
-import * as model from './model'
 import { decodeBasicToken } from './services'
+import * as model from './model'
 
 export const login = async ctx => {
   try {
@@ -96,7 +96,7 @@ export const update = async ctx => {
 
 export const remove = async ctx => {
   try {
-    await model.delete({
+    await model.remove({
       where: { id: ctx.params.id },
     })
 
