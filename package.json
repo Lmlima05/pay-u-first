@@ -59,7 +59,7 @@
     "dotenv": "^16.0.1",
     "dotenv-safe": "^8.2.0",
     "jsonwebtoken": "^8.5.1",
-    "koa": "^2.13.4",
+    "koa": "^2.15.4",
     "koa-bodyparser": "^4.3.0",
     "prisma": "^4.8.1",
     "ramda": "^0.28.0"
